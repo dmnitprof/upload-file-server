@@ -57,6 +57,7 @@ export function upload(selector, options = {}) {
 
     files.forEach(file => {
       if (!file.type.match('audio')) {
+       console.log(' выбран неверный формат файла')
         return
       }
 
@@ -65,8 +66,9 @@ export function upload(selector, options = {}) {
       reader.onload = ev => {
         const src = ev.target.result
         preview.insertAdjacentHTML('afterbegin', `
-            <span>${file.name}</span>
-          <div class="preview-image">
+<div class="track-item">
+         <span>${file.name}</span>
+           <div class="preview-file">
             <div class="preview-remove" data-name="${file.name}">&times;</div>
           
             <audio  class="audio" controls
@@ -77,6 +79,7 @@ export function upload(selector, options = {}) {
               <span>${file.name}</span>
               ${bytesToSize(file.size)}
             </div>
+          </div>
           </div>
         `)
       }
@@ -93,13 +96,13 @@ export function upload(selector, options = {}) {
     const {name} = event.target.dataset
     files = files.filter(file => file.name !== name)
 
-    if (!files.length) {
+    if (!files.length)  {
       upload.style.display = 'none'
     }
 
     const block = preview
       .querySelector(`[data-name="${name}"]`)
-      .closest('.preview-image')
+      .closest('.preview-file')
 
     block.classList.add('removing')
     setTimeout(() => block.remove(), 300)

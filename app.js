@@ -30,6 +30,7 @@ upload('#file', {
                 const block = blocks[index].querySelector('.preview-info-progress')
                 block.textContent = percentage
                 block.style.width = percentage
+
             }, error => {
                 console.log(error)
             }, () => {

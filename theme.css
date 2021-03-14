@@ -58,29 +58,24 @@ input[type=file] {
     padding: .5rem;
 }
 
-.preview-image {
+.preview-file {
+   padding-top: 1rem;
     position: relative;
     margin-bottom: .5rem;
     margin-right: .5rem;
     overflow: hidden;
 }
 
-.preview-image.removing {
+.preview-file.removing {
     transform: scale(0);
     transition: transform .3s;
 }
 
-/*.preview-image img {*/
-/*    width: 30px;*/
-/*    height: 30px;*/
-/*    position: absolute;*/
-/*}*/
-
-.preview-image:hover .preview-remove {
+.preview-file:hover .preview-remove {
     opacity: 1;
 }
 
-.preview-image:hover .preview-info {
+.preview-file:hover .preview-info {
     bottom: 4px;
 }
 
@@ -118,13 +113,16 @@ input[type=file] {
 .preview-info-progress {
     position: absolute;
     left: 0;
-    bottom: 0;
-    margin-top: 1rem;
+    right: 0;
+    bottom:0;
+    top:20px;
+    border-radius: .5rem;
     background: #42b983;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: width .22s;
+    color: crimson;
 }
 
 .result {
@@ -136,21 +134,28 @@ input[type=file] {
     align-items: center;
 }
 
-
 .track {
     height: 30px;
     position: relative;
     padding-right: .5rem;
     outline: none;
 }
-
+.track-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .title {
     text-align: center;
     color: cornflowerblue;
 }
 
 audio {
+    height: 20px;
     outline: none;
+    margin-bottom: .5rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
 }
 
 
