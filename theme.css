@@ -70,10 +70,11 @@ input[type=file] {
     transition: transform .3s;
 }
 
-.preview-image img {
-    width: 180px;
-    height:180px;
-}
+/*.preview-image img {*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    position: absolute;*/
+/*}*/
 
 .preview-image:hover .preview-remove {
     opacity: 1;
@@ -117,8 +118,8 @@ input[type=file] {
 .preview-info-progress {
     position: absolute;
     left: 0;
-    top: 0;
     bottom: 0;
+    margin-top: 1rem;
     background: #42b983;
     display: flex;
     align-items: center;
@@ -135,12 +136,21 @@ input[type=file] {
     align-items: center;
 }
 
-.result img {
-    width: 200px;
-    height: auto;
+
+.track {
+    height: 30px;
+    position: relative;
+    padding-right: .5rem;
+    outline: none;
 }
 
 .title {
     text-align: center;
     color: cornflowerblue;
 }
+
+audio {
+    outline: none;
+}
+
+

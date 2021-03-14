@@ -38,9 +38,9 @@ upload('#file', {
                     const result = document.createElement('div')
                     result.classList.add('result')
                     result.innerHTML = `
-<img src="./audio-img.jpg" alt="нет изображения">
-                <audio controls>
-                <source src="${url}" type="audio/mpeg"></audio>
+                <audio controls class="track">
+                <source src="${url}" type="audio/mpeg">
+                </audio>
                 <p>${file.name}</p>
                 `
                     document.body.appendChild(result)

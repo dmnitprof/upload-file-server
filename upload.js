@@ -65,9 +65,14 @@ export function upload(selector, options = {}) {
       reader.onload = ev => {
         const src = ev.target.result
         preview.insertAdjacentHTML('afterbegin', `
+            <span>${file.name}</span>
           <div class="preview-image">
             <div class="preview-remove" data-name="${file.name}">&times;</div>
-            <img src="${src}" alt="${file.name}" />
+          
+            <audio  class="audio" controls
+             <source  src="${src}" type="audio/mpeg">
+            <span>${file.name}</span>
+             </audio>
             <div class="preview-info">
               <span>${file.name}</span>
               ${bytesToSize(file.size)}
